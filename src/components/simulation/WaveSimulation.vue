@@ -341,7 +341,6 @@
           background: black;
           position: absolute;
           bottom: 10px;
-          left: 4Wpx;
           transform-origin: 50% 100%;
           transform: rotate(180deg); //小腿弯曲幅度
         }
@@ -364,7 +363,6 @@
           background: black;
           position: absolute;
           bottom: 10px;
-          left: 4Wpx;
           transform-origin: 50% 100%;
           transform: rotate(180deg); //小腿弯曲幅度
         }
