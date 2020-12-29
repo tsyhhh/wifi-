@@ -88,9 +88,9 @@
           manager_id :userInfo.user_id,
         })
         for(let i=0;i<list.data.length;i++){
-          text.push(list.data[i])
+          text.push(list.data[i].user_name)
         }
-        this.$alert(text, '该管理员所管理用户', {
+        this.$alert(text.toString(), '该管理员所管理用户有:', {
           confirmButtonText: '确定',
           type: 'info'
         })
