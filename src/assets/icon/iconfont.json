@@ -1,0 +1,44 @@
+{
+  "id": "2194240",
+  "name": "element UI",
+  "font_family": "iconfont",
+  "css_prefix_text": "el-icon-tsy-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6936735",
+      "name": "wifi",
+      "font_class": "wifi",
+      "unicode": "e9fc",
+      "unicode_decimal": 59900
+    },
+    {
+      "icon_id": "9041965",
+      "name": "版本",
+      "font_class": "info",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "703582",
+      "name": "run",
+      "font_class": "run",
+      "unicode": "ea5d",
+      "unicode_decimal": 59997
+    },
+    {
+      "icon_id": "762241",
+      "name": "Frustrated-Hand-Shake",
+      "font_class": "shake",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "1445570",
+      "name": "walk",
+      "font_class": "walk",
+      "unicode": "e927",
+      "unicode_decimal": 59687
+    }
+  ]
+}
