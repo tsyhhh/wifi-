@@ -70,7 +70,7 @@
     methods: {
         ChangeDisable() {
           this.disabledUpload=false
-          console.log(this.disabledUpload)
+          //console.log(this.disabledUpload)
         },
         submitUpload() {
           this.$refs.upload.submit();

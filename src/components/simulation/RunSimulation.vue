@@ -16,9 +16,10 @@
         :key="item.value"
         :label="item.label"
         :value="item.value"
-        @click.native="getUploadList">
+        @click.native="changeQuery">
       </el-option>
     </el-select>
+    <el-button style="margin-left: 10px" @click.native="getUploadList" :disabled="disabledQuery">查询</el-button>
 
     <!--    表格形式-->
     <el-table :data="SimuList" boder stripe>
@@ -73,6 +74,7 @@
     name: 'RunSimulation',
     data() {
       return{
+        disabledQuery:true,
         User:JSON.parse(sessionStorage.getItem('user')),
         SelUserId:JSON.parse(sessionStorage.getItem('user')).user_id,
         SELUserName:JSON.parse(sessionStorage.getItem('user')).user_name,
@@ -108,6 +110,9 @@
       }
     },
     methods: {
+      changeQuery(){
+        this.disabledQuery=false
+      },
       selectGet(val){
         let obj = {}
         obj = this.UserOptions.find(function(item){

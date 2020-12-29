@@ -34,8 +34,8 @@
               <template slot-scope="scope">
 <!--                <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>-->
                 <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUserById(scope.row)"></el-button>
-                <el-tooltip effect="dark" content="分配角色" placement="top" :enterable="false">
-                  <el-button type="warning" icon="el-icon-setting" size="mini"></el-button>
+                <el-tooltip effect="dark" content="提示" placement="top" :enterable="false">
+                  <el-button type="warning" icon="el-icon-setting" size="mini" @click="OpenTips"></el-button>
                 </el-tooltip>
               </template>
             </el-table-column>
@@ -131,6 +131,12 @@
           }
         }
       },
+      OpenTips(){
+        this.$alert('查看用户数据请直接到对应的菜单下查看', '提示', {
+          confirmButtonText: '确定',
+          type: 'warning'
+        })
+      },
       async getUserInfo() {
         await this.getUserList();
         for(let i=0;i<this.userList.length;i++){
@@ -155,8 +161,11 @@
         }
         const { data: res } = await this.$http.post('adduser', obj)  //调用接口
         if(res.status ==="success"){
-          if(res.data.success===true) this.$message.success("添加成功")
-          else this.$message.error("添加失败")
+          if(res.data.success===true) {
+            this.$message.success('添加成功')
+            this.queryInfo.query=''
+          }
+          else this.$message.error(res.message)
           await this.getUserList()
         }
         else {
