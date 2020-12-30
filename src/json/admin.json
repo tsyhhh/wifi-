@@ -126,10 +126,6 @@
         "id":602,
         "authName":"修改个人信息",
         "path":"ChangeUserInfo"
-      },{
-        "id":603,
-        "authName":"反馈",
-        "path":"MyFeedBack"
       }]
   }]
 }
