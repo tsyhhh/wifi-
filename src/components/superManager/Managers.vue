@@ -9,7 +9,7 @@
         <el-table-column label="邮箱" prop="user_email"></el-table-column>
         <el-table-column label="性别" prop="user_sex" :formatter="formatRole"></el-table-column>
         <el-table-column label="电话" prop="user_tel"></el-table-column>
-        <el-table-column label="角色" prop="user_type"></el-table-column>
+        <el-table-column label="角色" prop="user_type" :formatter="formatRole1"></el-table-column>
 
         <!--            操作-->
         <el-table-column label="操作">
@@ -62,6 +62,9 @@
       formatRole(row){
         //console.log(row)
         return row.user_sex === '' ? "未定义" :  row.user_sex === '1'? "男": "女" ;
+      },
+      formatRole1(row){
+        return row.user_type === '1' ? "管理员" :  row.user_type === '0'? "普通用户": "超级管理员" ;
       },
       async getManagerList() {
         let obj = {

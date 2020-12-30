@@ -115,6 +115,9 @@
         if(this.TextFeedBack===''){
           this.$message.error('请输入反馈内容!')
         }
+        else if(this.TextFeedBack.length>100){
+          this.$message.error('反馈内容请不要超过100字!')
+        }
         else {
           const { data: res } = await this.$http.post('feedback',obj)//获取数据
           if(res.status==="success"){
@@ -135,7 +138,7 @@
         if (res.status === "success") {
           this.$message.success('申请成功，请耐心等待!')
         } else {
-          this.$message.error('申请失败!请稍后再试')
+          this.$message.error(res.message)
         }
       }
     },
