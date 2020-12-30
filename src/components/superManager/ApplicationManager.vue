@@ -86,7 +86,7 @@
           type: 'info'
         }).then(async () => {
           const {data :res } = await this.$http.post('add_manager',obj)
-          if(res.data.is_add === true){
+          if(res.status==='success'){
             this.$message({
               type: 'info',
               message: '添加成功'
@@ -95,13 +95,14 @@
           else {
             this.$message({
               type: 'info',
-              message: '添加失败'
+              message: res.message
             });
           }
         }).catch(() => {
+          console.log("2--------")
           this.$message({
             type: 'info',
-            message: '已取消添加该用户为管理人员'
+            message: res.message
           });
         });
       },
