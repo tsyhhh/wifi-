@@ -130,7 +130,7 @@
       },
       async GetManager () {
         const { data: res } = await this.$http.post('apply_manager', {
-          user_id:this.user_id,
+          user_id:this.queryInfo.user_id,
         })//获取数据
         if (res.status === "success") {
           this.$message.success('申请成功，请耐心等待!')

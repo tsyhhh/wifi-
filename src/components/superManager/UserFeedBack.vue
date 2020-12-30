@@ -108,6 +108,7 @@
           if(res.status === "success"){
             this.dialogVisible = false;
             this.$message.success("回复成功")
+            this.TextReply=''
           }
           else {
             this.$message.error(res.message)
