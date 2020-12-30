@@ -19,7 +19,7 @@
               <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeManagerById(scope.row)"></el-button>
             </el-tooltip>
 
-            <el-tooltip effect="dark" content="分配角色" placement="top" :enterable="false">
+            <el-tooltip effect="dark" content="查看管理用户" placement="top" :enterable="false">
               <el-button type="warning" icon="el-icon-setting" size="mini" @click="LookManagerById(scope.row)"></el-button>
             </el-tooltip>
 
@@ -81,12 +81,11 @@
           this.ManagerList = [];
           for(let i = 0; i<res.data.list.length;i++){
             this.ManagerList.push(res.data.list[i])
-            // console.log(res.data[i].answer)
           }
         }
       },
       async LookManagerById (userInfo) {
-        let text ;
+        let text =[];
         const { data: list } = await this.$http.post('check_user_list', {
           manager_id :userInfo.user_id,
         })

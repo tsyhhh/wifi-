@@ -51,6 +51,10 @@
       }
     },
     methods: {
+      dateFormat(date) {
+        const Datetemp = new Date(date).toJSON()
+        return new Date(+new Date(Datetemp) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+      },
       async getLogList() {
         let obj={
           super_id:this.queryInfo.user_id,
