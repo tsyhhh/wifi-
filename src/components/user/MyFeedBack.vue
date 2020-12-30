@@ -7,7 +7,7 @@
       <el-table :data="feedBackList" boder stripe>
         <el-table-column>
           <el-table-column type="index" label="#"></el-table-column>
-          <el-table-column label="反馈内容" prop="content"></el-table-column>
+          <el-table-column label="反馈内容" prop="content" :show-overflow-tooltip="true"></el-table-column>
           <el-table-column label="反馈时间" prop="time"></el-table-column>
           <el-table-column label="是否回复" prop="status"  :formatter="formatRole"></el-table-column>
 
@@ -148,6 +148,8 @@
   }
 </script>
 
-<style scoped>
-
+<style>
+  .el-tooltip__popper{max-width:20%;}
+  .el-tooltip__popper,.el-tooltip__popper.is-dark{background:#f5f5f5 !important;
+    color: #303133 !important; font-size: 14px}
 </style>
